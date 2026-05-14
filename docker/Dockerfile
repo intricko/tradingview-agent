@@ -2,6 +2,7 @@ ARG OLLAMA_VERSION=0.21.0
 ARG NODE_VERSION=24
 ARG MODELRELAY_VERSION=1.16.0
 ARG CODE_SERVER_VERSION=4.117.0
+ARG HERMES_VERSION="v2026.5.7"
 
 # Use the official Ollama image to get the binary
 FROM ollama/ollama:${OLLAMA_VERSION} AS ollama-bin
@@ -13,7 +14,7 @@ FROM node:${NODE_VERSION}-slim AS node-bin
 FROM lscr.io/linuxserver/webtop:ubuntu-mate
 
 # Install help utilities and clean up apt cache to reduce image size
-RUN apt-get update && apt-get install -y htop zsh && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y htop zsh ripgrep && rm -rf /var/lib/apt/lists/*
 
 # Copy Node.js binaries and libraries
 COPY --from=node-bin --chown=abc:abc /usr/local/bin/node /usr/local/bin/
@@ -35,7 +36,8 @@ RUN npm install -g modelrelay@${MODELRELAY_VERSION} && \
     chown -R abc:abc /usr/local/lib/node_modules/modelrelay /usr/local/bin/modelrelay
 
 # Install Hermes
-RUN curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash && \
+ARG HERMES_VERSION
+RUN curl -fsSL "https://raw.githubusercontent.com/NousResearch/hermes-agent/${HERMES_VERSION}/scripts/install.sh" | bash -s -- --skip-setup && \
     npm cache clean --force && \
     rm -rf /var/lib/apt/lists/* && \
     chown -R abc:abc /usr/local/lib/hermes-agent
@@ -44,7 +46,7 @@ RUN curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/
 ARG CODE_SERVER_VERSION
 RUN curl -fsSL https://code-server.dev/install.sh | sh -s -- --version=${CODE_SERVER_VERSION} --method=standalone --prefix=/usr/local && \
     ln -fs /usr/local/lib/code-server-${CODE_SERVER_VERSION} /usr/local/lib/code-server && \
-    ln -fs /usr/local/lib/code-server/bin/code-server /usr/local/bin/code-server && \
+    ln -fs /usr/local/lib/code-server/bin/code-server /usr/local/bin/code && \
     rm -rf ~/.cache
 COPY default.conf /defaults/default.conf
 
