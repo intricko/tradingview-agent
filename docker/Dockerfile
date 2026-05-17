@@ -99,7 +99,7 @@ RUN if [ "${TARGETARCH:-amd64}" != "arm64" ]; then \
         apt-get clean && \
         rm -rf /var/lib/apt/lists/* && \
         chown -R abc:abc /opt/TradingView && \
-        echo "[TradingView] Installed successfully"
+        echo "[TradingView] Installed successfully" \
 else \
     echo "Skipping TradingView installation on unsupported architecture: ${TARGETARCH:-unknown}"
 
