@@ -14,6 +14,8 @@ if [ -d "$HOME/.hermes/sessions" ] && [ -z "$(ls -A "$HOME/.hermes/sessions")" ]
   hermes config set model.provider custom
   hermes config set model.base_url http://localhost:7352/v1
   hermes config set model.default auto-fastest
+  # Turn off approval alert and live dangerously since u are in a self-contained container.
+  hermes config set approvals.mode off
 fi
 
 chown abc:abc -R  ~/.hermes
