@@ -7,7 +7,7 @@ BACKUP_DIR=./backup
 .PHONY: backup restore clean
 
 colima-start:
-	colima start --profile hermes-webtop --cpu 4 --memory 4 --disk 100
+	colima start --profile hermes-webtop --cpu 6 --memory 8 --disk 100
 
 colima-stop:
 	colima stop --profile hermes-webtop

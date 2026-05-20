@@ -1,10 +1,10 @@
-ARG HERMES_VERSION="v2026.5.7"
+ARG HERMES_VERSION="v2026.5.16"
 ARG OMNIROUTE_VERSION=3.7.9
 ARG MODELRELAY_VERSION=1.17.1
 ARG OLLAMA_VERSION=0.21.0
 ARG NODE_VERSION=24
 ARG CODE_SERVER_VERSION=4.118.0
-ARG MNEMON_VERSION=0.1.3
+ARG MNEMON_VERSION=0.1.6
 ARG TARGETARCH
 
 # Use the official Ollama image to get the binary
@@ -59,7 +59,8 @@ RUN curl -fsSL https://code-server.dev/install.sh | sh -s -- --version=${CODE_SE
     ln -fs /usr/local/lib/code-server-${CODE_SERVER_VERSION} /usr/local/lib/code-server && \
     ln -fs /usr/local/lib/code-server/bin/code-server /usr/local/bin/code && \
     rm -rf ~/.cache
-COPY default.conf /defaults/default.conf
+# Uncomment this when you want to use your own default.conf to route from your reverse proxy to code-server.  I rather use codeserver to route to WebTop port 3000
+#    COPY default.conf /defaults/default.conf
 
 # Switch to the abc user and set zsh as the default shell for both root and abc
 RUN usermod -s $(which zsh) root; usermod -s $(which zsh) abc
