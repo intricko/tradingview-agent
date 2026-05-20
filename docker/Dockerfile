@@ -16,8 +16,19 @@ FROM node:${NODE_VERSION}-slim AS node-bin
 # Use your preferred Webtop flavor as the base (e.g., Ubuntu, Alpine)
 FROM lscr.io/linuxserver/webtop:ubuntu-mate
 
+# Add gh apt repository
+ARG TARGETARCH
+RUN GH_ARCH="${GH_ARCH:-${TARGETARCH:-amd64}}"; \
+    case "${GH_ARCH}" in \
+      amd64|x86_64) GH_ARCH=amd64 ;; \
+      arm64|aarch64) GH_ARCH=arm64 ;; \
+      *) echo "Unsupported GH_ARCH: ${GH_ARCH}" >&2; exit 1 ;; \
+    esac; \
+    && curl -fsSL https://cli.github.com/packages/github_cli-archive-keyring.gpg | gpg --dearmor -o /usr/share/keyrings/github_cli-archive-keyring.gpg \
+    && echo "deb [arch=${GH_ARCH} signed-by=/usr/share/keyrings/github_cli-archive-keyring.gpg] https://cli.github.com/packages stable main" > /etc/apt/sources.list.d/github-cli.list 
+
 # Install help utilities and clean up apt cache to reduce image size
-RUN apt-get update && apt-get install -y htop zsh ripgrep && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y htop zsh ripgrep gh && rm -rf /var/lib/apt/lists/*
 
 # Copy Node.js binaries and libraries
 COPY --from=node-bin --chown=abc:abc /usr/local/bin/node /usr/local/bin/
