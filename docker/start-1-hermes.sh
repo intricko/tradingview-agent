@@ -21,4 +21,22 @@ if [ -d "$HOME/.hermes/sessions" ] && [ -z "$(ls -A "$HOME/.hermes/sessions")" ]
   hermes config set memory.user_profile_enabled true
 fi
 
+# update mnemon provider if version changes
+echo "[start-1-hermes.sh] Checking mnemon provider..."
+rm -rf /tmp/mnemon_repo
+if git clone https://github.com/gitricko/hermes-plugin-mnemon /tmp/mnemon_repo; then
+  if [ ! -d "$HOME/.hermes/plugin/mnemon" ] || ! diff -r -q "$HOME/.hermes/plugin/mnemon" "/tmp/mnemon_repo/mnemon" >/dev/null 2>&1; then
+    echo "[start-1-hermes.sh] Mnemon plugin is missing or out of date. Updating..."
+    mkdir -p "$HOME/.hermes/plugin"
+    rm -rf "$HOME/.hermes/plugin/mnemon"
+    cp -r "/tmp/mnemon_repo/mnemon" "$HOME/.hermes/plugin/mnemon"
+    echo "[start-1-hermes.sh] Mnemon plugin updated successfully."
+  else
+    echo "[start-1-hermes.sh] Mnemon plugin is up to date."
+  fi
+  rm -rf /tmp/mnemon_repo
+else
+  echo "[start-1-hermes.sh] WARNING: Failed to clone gitricko/hermes-plugin-mnemon repository."
+fi
+
 chown abc:abc -R  ~/.hermes
