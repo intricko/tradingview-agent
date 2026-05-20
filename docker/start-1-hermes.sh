@@ -16,9 +16,10 @@ if [ -d "$HOME/.hermes/sessions" ] && [ -z "$(ls -A "$HOME/.hermes/sessions")" ]
   hermes config set model.default auto-fastest
   # Turn off approval alert and live dangerously since u are in a self-contained container.
   hermes config set approvals.mode off
-  # Turn on memory by default
+  # Turn on memory by default and to mnemon
   hermes config set memory.memory_enabled true
   hermes config set memory.user_profile_enabled true
+  hermes config set memory.provider mnemon
 fi
 
 # update mnemon provider if version changes
