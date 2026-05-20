@@ -24,7 +24,7 @@ RUN GH_ARCH="${GH_ARCH:-${TARGETARCH:-amd64}}"; \
       arm64|aarch64) GH_ARCH=arm64 ;; \
       *) echo "Unsupported GH_ARCH: ${GH_ARCH}" >&2; exit 1 ;; \
     esac; \
-    && curl -fsSL https://cli.github.com/packages/github_cli-archive-keyring.gpg | gpg --dearmor -o /usr/share/keyrings/github_cli-archive-keyring.gpg \
+    curl -fsSL https://cli.github.com/packages/github_cli-archive-keyring.gpg | gpg --dearmor -o /usr/share/keyrings/github_cli-archive-keyring.gpg \
     && echo "deb [arch=${GH_ARCH} signed-by=/usr/share/keyrings/github_cli-archive-keyring.gpg] https://cli.github.com/packages stable main" > /etc/apt/sources.list.d/github-cli.list 
 
 # Install help utilities and clean up apt cache to reduce image size
