@@ -3,12 +3,12 @@ _Run Hermes inside a browser-based Linux desktop with free LLM support through M
 
 <p align="center">
     <picture>
-        <img width="703" height="344" alt="hermes-webtop-title-logo" src="./docs/hermes-webtop-title-logo.png" />
+        <img height="300" alt="hermes-webtop-title-logo" src="./docs/hermes-webtop-big.png" />
     </picture>
 </p>
 
 <p align="center">
-  <strong>Your personal AI assistant in the browser — no GPU required</strong>
+  <strong>She will grow with you ...</strong>
 </p>
 
 <p align="center">
@@ -26,11 +26,12 @@ _Run Hermes inside a browser-based Linux desktop with free LLM support through M
 **Hermes-WebTop** gives you a **fully functional Hermes AI assistant** in your browser in under 10 minutes — no powerful PC, no Docker on your machine, no GPU required.
 
 Just open this repo in a GitHub Codespace and you get:
-- A complete Ubuntu MATE desktop (WebTop)
+- A complete Ubuntu MATE desktop (WebTop) for computer use
 - CodeServer at port 8888 with Hermes Extension installed and preconfigured
 - Ollama server pre-installed and auto-started
 - ModelRelay pre-installed, auto-started and pre-configured as default model
 - Hermes gateway accessible via desktop launcher
+- [Mnemon](https://github.com/mnemon-dev/mnemon) as your Hermes default [memory provider](https://github.com/gitricko/hermes-plugin-mnemon)
 - Persistent volume for your config and settings
 
 When you're ready to go production, simply move the same Docker setup to your own machine or VPS.
