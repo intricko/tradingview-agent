@@ -11,6 +11,7 @@ services:
     #   - seccomp:unconfined
 
     environment:
+      - PATH=/config/.local/bin:${PATH}
       # Set your User ID and Group ID to match the host user (run 'id $USER' in your terminal)
       - PUID=${DOCKER_PUID:-501}
       - PGID=${DOCKER_PGID:-20}
