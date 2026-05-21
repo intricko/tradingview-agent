@@ -1,5 +1,5 @@
 # 🪽 Hermes — Web Top
-_Run Hermes inside a browser-based Linux desktop with free LLM support through ModelRelay._
+_Run Hermes inside a browser-based VSCode + Linux desktop with free LLM support through ModelRelay._
 
 <p align="center">
     <picture>
