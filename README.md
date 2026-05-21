@@ -1,5 +1,5 @@
 # 🪽 Hermes — Web Top
-_Run Hermes inside a browser-based VSCode + Linux desktop with free LLM support through ModelRelay._
+_Run Hermes-Agent inside a browser-based VSCode + Linux desktop with free LLM support through ModelRelay._
 
 <p align="center">
     <picture>
@@ -44,8 +44,8 @@ The only catch? You normally need a dedicated machine with GPU.
 **Hermes-WebTop removes that catch completely.**
 
 Perfect for:
-- Trying Hermes risk-free
-- Free LLM APIs through [ModelRelay](https://github.com/ellipticmarketing/modelrelay)
+- Trying Hermes-Agent risk-free
+- Free LLM APIs through [ModelRelay](https://github.com/ellipticmarketing/modelrelay) or [OmniRoute](https://github.com/diegosouzapw/OmniRoute)
 - Students / hackers / evaluators
 - Anyone who wants a personal AI assistant without breaking the bank
 
@@ -75,7 +75,7 @@ Perfect for:
    - You see `hermes dashboard` is already running
    - Run `hermes` from the terminal; OR:
    - Go to chromium at `http://localhost:9119` to access Hermes WebUI
-   - Recommendation to use CodeServer instead of WebTop
+   - However, my recommendation to use CodeServer interface instead of Webtop to interact with the agent 
 
    <img width="703" alt="End Results" src="./docs/working-hermes.png">
 
@@ -87,11 +87,13 @@ Perfect for:
 - **Easy backup/restore** — `make backup` / `make restore`
 - **One-command everything** — powerful Makefile + clean `docker-compose.yml`
 - **Auto-start ModelRelay** — Default configuration for Free LLM API
+-  **Auto-start OmniRoute** — You need some configuration before it work but it is flexible and powerful
 - **Auto-start Ollama** — custom init script on WebTop boot
 - **Colima / local Docker support** ready
 - **Built-in code-server IDE** — browser-based VS Code on port `8888`
+- **Mnemon as default memory provider** - a knowledge store with intent-aware recall, importance decay, and auto-deduplication
 
-## 🧑‍💻 Built-in code-server IDE
+## 🧑‍💻 Built-in code-server IDE (VSCode on the Web - Interface to Agent)
 
 This image includes `code-server` and exposes it on port `8888`.
 
@@ -104,7 +106,7 @@ This image includes `code-server` and exposes it on port `8888`.
 
 - Hermes Agent's Extension is preinstalled and configured in VSCode
 - Cline Extension is also preinstall and configured to ModelRelay
-- Start Hacking away in VSCode, use WebTop if you need to monitor agent do desktop-use operations. eg: Non-Headless Chrome debugging for instance.
+- Start Hacking away in VSCode, use WebTop if you need to monitor agent do desktop-use operations. eg: Non-Headless Chrome debugging for instance / Linux Computer-Use
 
 ## 🔒 Security: Protected by GitHub Authentication
 
@@ -167,19 +169,6 @@ Run locally (no Codespaces)
 make build-local             # especially if you modified the ./docker/Dockerfile
 make start-locally-baked     # start from your local baked image
 ```
-
-## ⚠️ Current Limitations (honest)
-
-- GitHub Codespaces free tier has monthly limits (great for testing, less ideal for 24/7 as Codespace auto-shutdown during inactivity)
-- Ollama cloud [credits](https://ollama.com/settings) are daily — heavy use will push you to paid/local models. Or if you have multiple accounts, just `ollama signout` and `ollama signin` with different account.
-- Browser desktop has slight latency vs native (expected). You can shutdown your codespace and [change](https://docs.github.com/en/codespaces/customizing-your-codespace/changing-the-machine-type-for-your-codespace) to 4-core codespace to improve responsiveness or the need to run heavy applications.
-
-## 🛣️ Roadmap
-
-- [ ] More screenshots + video demo
-- [ ] Pre-built Docker image tags for stable releases
-- [ ] Community templates (Telegram-only, WhatsApp-only, etc.)
-- [ ] One-click "deploy to VPS" guide (Railway / Fly.io / cheap VPS)
 
 ## 🤝 Contributing
 
