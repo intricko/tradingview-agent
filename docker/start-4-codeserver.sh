@@ -38,12 +38,13 @@ chown abc:abc /usr/local/bin
 
   fi
 
-  EXTENSION=joaompfp.hermes-ai-agent
+  EXTENSION=gitricko.hermes-ai-agent
+  VERSION=3.0.1
   if code --list-extensions | grep -q "${EXTENSION}"; then
     echo "[start-4-codeserver] Extension ${EXTENSION} already installed, skip"
   else
     echo "[start-4-codeserver] Installing Extension ${EXTENSION}..."
-    runuser -l abc -c "curl -sL https://github.com/joaompfp/hermes-vscode/releases/download/v2.0.0/hermes-ai-agent-2.0.0.vsix -o /tmp/hermes-ai-agent.vsix && code --install-extension /tmp/hermes-ai-agent.vsix --force && rm /tmp/hermes-ai-agent.vsix"
+    runuser -l abc -c "curl -sL https://github.com/gitricko/hermes-vscode/releases/download/v${VERSION}/hermes-ai-agent-${VERSION}.vsix -o /tmp/hermes-ai-agent.vsix && code --install-extension /tmp/hermes-ai-agent.vsix --force && rm /tmp/hermes-ai-agent.vsix"
   fi
 
 ) &
