@@ -35,16 +35,27 @@ chown abc:abc /usr/local/bin
     cp "${SCRIPT_DIR}/secrets.json" "$HOME/.cline/data/secrets.json"
     runuser -l abc -c "code --install-extension ${EXTENSION}"
     chown -R abc:abc $HOME/.cline/data
-
   fi
 
-  EXTENSION=gitricko.hermes-ai-agent
-  VERSION=3.0.1
+  EXTENSION=anthropic.claude-code
   if code --list-extensions | grep -q "${EXTENSION}"; then
     echo "[start-4-codeserver] Extension ${EXTENSION} already installed, skip"
   else
     echo "[start-4-codeserver] Installing Extension ${EXTENSION}..."
-    runuser -l abc -c "curl -sL https://github.com/gitricko/hermes-vscode/releases/download/v${VERSION}/hermes-ai-agent-${VERSION}.vsix -o /tmp/hermes-ai-agent.vsix && code --install-extension /tmp/hermes-ai-agent.vsix --force && rm /tmp/hermes-ai-agent.vsix"
+    runuser -l abc -c "mkdir -p $HOME/.claude"
+    runuser -l abc -c "cp ${SCRIPT_DIR}/settings.json $HOME/.claude/settings.json"
+    runuser -l abc -c "curl -fsSL https://claude.ai/install.sh | bash"
+    runuser -l abc -c "code --install-extension ${EXTENSION}"
+    chown -R abc:abc $HOME/.claude
+  fi
+
+  EXTENSION=hermes-code-agent
+  VERSION=3.0.2
+  if code --list-extensions | grep -q "${EXTENSION}"; then
+    echo "[start-4-codeserver] Extension ${EXTENSION} already installed, skip"
+  else
+    echo "[start-4-codeserver] Installing Extension ${EXTENSION}..."
+    runuser -l abc -c "curl -sL https://github.com/gitricko/hermes-vscode/releases/download/v${VERSION}/${EXTENSION}-${VERSION}.vsix -o /tmp/${EXTENSION}.vsix && code --install-extension /tmp/${EXTENSION}.vsix --force && rm /tmp/${EXTENSION}.vsix"
   fi
 
 ) &

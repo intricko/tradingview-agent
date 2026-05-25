@@ -3,7 +3,7 @@ ARG OMNIROUTE_VERSION=3.7.9
 ARG MODELRELAY_VERSION=1.17.1
 ARG OLLAMA_VERSION=0.24.0
 ARG NODE_VERSION=24
-ARG CODE_SERVER_VERSION=4.118.0
+ARG CODE_SERVER_VERSION=4.121.0
 ARG MNEMON_VERSION=0.1.6
 ARG TARGETARCH
 
@@ -53,7 +53,8 @@ RUN curl -fsSL "https://raw.githubusercontent.com/NousResearch/hermes-agent/${HE
 
 # Install ModelRelay and start automatically when desktop loads
 ARG MODELRELAY_VERSION
-RUN npm install -g modelrelay@${MODELRELAY_VERSION} && \
+# RUN npm install -g modelrelay@${MODELRELAY_VERSION} && \
+RUN npm install -g github:gitricko/modelrelay && \
     npm cache clean --force && \
     chown abc:abc -R /usr/local/lib/node_modules/modelrelay /usr/local/bin/modelrelay
 

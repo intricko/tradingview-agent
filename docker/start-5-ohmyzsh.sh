@@ -1,5 +1,8 @@
 #!/bin/bash
-runuser -l abc -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended &'
+
+(
+    
+runuser -l abc -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended '
 
 ZSHRC="$HOME/.zshrc"
 TARGET_LINE='export PATH="$HOME/.local/bin:$PATH"'
@@ -20,3 +23,5 @@ if [ -f "$ZSHRC" ]; then
 else
     echo "[start-5-ohmyzsh.sh] Error: ~/.zshrc does not exist. Skipping configuration."
 fi
+
+) &
