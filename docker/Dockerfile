@@ -94,4 +94,4 @@ RUN set -eux; \
     chmod +x /usr/local/bin/mnemon && \
     rm -rf /tmp/mnemon.tar.gz /tmp/mnemon
 
-EXPOSE 8888
+EXPOSE 8888 3000

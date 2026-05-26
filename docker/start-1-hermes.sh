@@ -10,7 +10,7 @@ sync_desktop_file "$SRC" "/config/.config/autostart/Hermes.desktop"
 sync_desktop_file "$SRC" "/config/Desktop/Hermes.desktop"
 
 if [ -d "$HOME/.hermes/sessions" ] && [ -z "$(ls -A "$HOME/.hermes/sessions")" ]; then
-  echo "[start-1-hermes.sh] No sessions found in $HOME/.hermes/sessions, setting up default configuration for custom provider"
+  echo "[start-1-hermes] No sessions found in $HOME/.hermes/sessions, setting up default configuration for custom provider"
   hermes config set model.provider custom
   hermes config set model.base_url http://localhost:7352/v1
   hermes config set model.default auto-fastest
@@ -23,21 +23,21 @@ if [ -d "$HOME/.hermes/sessions" ] && [ -z "$(ls -A "$HOME/.hermes/sessions")" ]
 fi
 
 # update mnemon provider if version changes
-echo "[start-1-hermes.sh] Checking mnemon provider..."
+echo "[start-1-hermes] Checking mnemon provider..."
 rm -rf /tmp/mnemon_repo
 if git clone https://github.com/gitricko/hermes-plugin-mnemon /tmp/mnemon_repo; then
   if [ ! -d "$HOME/.hermes/plugins/mnemon" ] || ! diff -r -q "$HOME/.hermes/plugins/mnemon" "/tmp/mnemon_repo/mnemon" >/dev/null 2>&1; then
-    echo "[start-1-hermes.sh] Mnemon plugin is missing or out of date. Updating..."
+    echo "[start-1-hermes] Mnemon plugin is missing or out of date. Updating..."
     mkdir -p "$HOME/.hermes/plugins"
     rm -rf "$HOME/.hermes/plugins/mnemon"
     cp -r "/tmp/mnemon_repo/mnemon" "$HOME/.hermes/plugins/mnemon"
-    echo "[start-1-hermes.sh] Mnemon plugin updated successfully."
+    echo "[start-1-hermes] Mnemon plugin updated successfully."
   else
-    echo "[start-1-hermes.sh] Mnemon plugin is up to date."
+    echo "[start-1-hermes] Mnemon plugin is up to date."
   fi
   rm -rf /tmp/mnemon_repo
 else
-  echo "[start-1-hermes.sh] WARNING: Failed to clone gitricko/hermes-plugin-mnemon repository."
+  echo "[start-1-hermes] WARNING: Failed to clone gitricko/hermes-plugin-mnemon repository."
 fi
 
 chown abc:abc -R  ~/.hermes
