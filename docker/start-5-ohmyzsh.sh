@@ -10,7 +10,7 @@ TARGET_LINE='export PATH="$HOME/.local/bin:$PATH"'
 # 1. Check if ~/.zshrc exists
 if [ -f "$ZSHRC" ]; then
     echo "[start-5-ohmyzsh.sh] ~/.zshrc found. Checking PATH configuration..."
-    
+    cat "$ZSHRC"
     # 2. Check if the specific PATH line is already set in the file
     if grep -Fxq "$TARGET_LINE" "$ZSHRC"; then
         echo "[start-5-ohmyzsh.sh] PATH is already correctly configured in ~/.zshrc."
