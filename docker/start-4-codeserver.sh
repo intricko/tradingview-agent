@@ -43,8 +43,10 @@ chown abc:abc /usr/local/bin
   else
     echo "[start-4-codeserver] Installing Extension ${EXTENSION}..."
     runuser -l abc -c "mkdir -p $HOME/.claude"
-    runuser -l abc -c "cp ${SCRIPT_DIR}/settings.json $HOME/.claude/settings.json"
+    runuser -l abc -c "cp ${SCRIPT_DIR}/claude-term-settings.json $HOME/.claude/settings.json"
     runuser -l abc -c "curl -fsSL https://claude.ai/install.sh | bash"
+    runuser -l abc -c "mkdir -p $HOME/.local/share/code-server/User"
+    runuser -l abc -c "cp ${SCRIPT_DIR}/claude-vscode-settings.json $HOME/.local/share/code-server/User/settings.json"
     runuser -l abc -c "code --install-extension ${EXTENSION}"
     chown -R abc:abc $HOME/.claude
   fi

@@ -19,6 +19,7 @@ if [ -f "$ZSHRC" ]; then
         runuser -l abc -c 'echo "$TARGET_LINE" >> "$ZSHRC"'
         echo "[start-5-ohmyzsh.sh] Successfully added ~/.local/bin to your PATH in ~/.zshrc."
         echo "[start-5-ohmyzsh.sh] Please run 'source ~/.zshrc' to apply changes to your current session."
+        cat "$ZSHRC"
     fi
 else
     echo "[start-5-ohmyzsh.sh] Error: ~/.zshrc does not exist. Skipping configuration."
