@@ -43,6 +43,7 @@ RUN mkdir -p /custom-cont-init.d
 COPY --chown=abc:abc *.desktop /custom-cont-init.d
 COPY --chown=abc:abc *.sh /custom-cont-init.d
 COPY --chown=abc:abc *.json /custom-cont-init.d
+COPY --chown=abc:abc *.md /custom-cont-init.d
 
 # Install Hermes
 ARG HERMES_VERSION
