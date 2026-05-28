@@ -26,7 +26,7 @@ fi
 echo "[start-hermes] Checking mnemon provider..."
 rm -rf /tmp/mnemon_repo
 if git clone https://github.com/gitricko/hermes-plugin-mnemon /tmp/mnemon_repo; then
-  if [ ! -d "$HOME/.hermes/plugins/mnemon" ] || ! diff -r -q "$HOME/.hermes/plugins/mnemon" "/tmp/mnemon_repo/mnemon" >/dev/null 2>&1; then
+  if [ ! -d "$HOME/.hermes/plugins/mnemon" ] || ! diff -r -q -x __pycache__ "$HOME/.hermes/plugins/mnemon" "/tmp/mnemon_repo/mnemon" >/dev/null 2>&1; then
     echo "[start-hermes] Mnemon plugin is missing or out of date. Updating..."
     mkdir -p "$HOME/.hermes/plugins"
     rm -rf "$HOME/.hermes/plugins/mnemon"
