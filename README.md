@@ -86,12 +86,13 @@ Perfect for:
 - **Persistent config** — docker volume backup and restore after Codespace recreation
 - **Easy backup/restore** — `make backup` / `make restore`
 - **One-command everything** — powerful Makefile + clean `docker-compose.yml`
-- **Auto-start ModelRelay** — Default configuration for Free LLM API
--  **Auto-start OmniRoute** — You need some configuration before it work but it is flexible and powerful
+- **Auto-start ModelRelay** — Default configuration for Free LLM API to Hermes
+- **Auto-start OmniRoute** — You need some configuration before it work but it is flexible and powerful
 - **Auto-start Ollama** — custom init script on WebTop boot
 - **Colima / local Docker support** ready
 - **Built-in code-server IDE** — browser-based VS Code on port `8888`
-- **Mnemon as default memory provider** - a knowledge store with intent-aware recall, importance decay, and auto-deduplication
+- **Multiple AI VSCode Extension preinstall/config with ModelRelay** - Cline, Hermes and ClaudeCode
+- **Mnemon as default memory provider** - a knowledge store for Hermes with intent-aware recall, importance decay, and auto-deduplication
 
 ## 🧑‍💻 Built-in code-server IDE (VSCode on the Web - Interface to Agent)
 
