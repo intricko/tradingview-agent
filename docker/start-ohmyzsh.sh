@@ -15,6 +15,7 @@
         else
             # 3. If not set, append it
             runuser -l abc -c "echo $TARGET_LINE >> $ZSHRC"
+            runuser -l abc -c "echo 'export ANTHROPIC_API_KEY=sk-whatever' >> $ZSHRC"
             echo "[start-ohmyzsh] Successfully added ~/.local/bin to your PATH in ~/.zshrc."
         fi
     else
