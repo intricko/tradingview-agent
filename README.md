@@ -65,8 +65,9 @@ Perfect for:
    ```bash
    make start
    ```
+   <img width="703" alt="launch-codespace" src="./docs/make-start.gif">
 
-4. Wait ~60 seconds. When the web desktop URL appears in the Codespace Ports tab, click it.
+4. Wait ~60 seconds after first launch. It takes about 5-7 minutes if docker image is not loaded yet. When the web desktop URL appears in the Codespace Ports tab, click it.
 
    <img width="703" alt="launch-webtop-via-ports" src="./docs/launch-webtop-via-ports.png">
 
@@ -77,7 +78,7 @@ Perfect for:
    - Go to chromium at `http://localhost:9119` to access Hermes WebUI
    - However, my recommendation to use CodeServer interface instead of Webtop to interact with the agent 
 
-   <img width="703" alt="End Results" src="./docs/working-hermes.png">
+   <img width="703" alt="End Results" src="./docs/working-hermes.gif">
 
 ## 🔧 Features
 
