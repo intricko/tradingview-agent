@@ -49,10 +49,6 @@ Perfect for:
 - Students / hackers / evaluators
 - Anyone who wants a personal AI assistant without breaking the bank
 
-## 📸 Demo
-
-(Demo video coming soon)
-
 ## 🚀 Quick Start (5-10 minutes)
 
 1. **Open this repository in a GitHub Codespace** (big green "Code" button → Codespaces → New)
@@ -70,6 +66,7 @@ Perfect for:
 4. Wait ~60 seconds after first launch. It takes about 5-7 minutes if docker image is not loaded yet. When the web desktop URL appears in the Codespace Ports tab, click it.
 
    <img width="703" alt="launch-webtop-via-ports" src="./docs/launch-webtop-via-ports.png">
+   <img width="703" alt="End Results" src="./docs/working-vm.gif">
 
 5. Inside the WebTop desktop:
 
