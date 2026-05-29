@@ -55,7 +55,7 @@ Perfect for:
 
    It is recommended that you use 4 cpu core and 16G codespace.
 
-   <img width="710" alt="launch-codespace" src="./docs/launch-codespace.gif">
+   <img width="800" alt="launch-codespace" src="./docs/launch-codespace.gif">
 
 3. In the Codespace terminal run:
    ```bash
