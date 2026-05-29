@@ -61,15 +61,15 @@ Perfect for:
    ```bash
    make start
    ```
-   <img width="703" alt="launch-codespace" src="./docs/make-start.gif">
+   <img width="900" alt="launch-codespace" src="./docs/make-start.gif">
 
 4. Wait ~60 seconds after first launch. It takes about 5-7 minutes if docker image is not loaded yet. When the web desktop URL appears in the Codespace Ports tab, click it.
 
-   <img width="703" alt="launch-webtop-via-ports" src="./docs/launch-webtop-via-ports.png">
+   <img width="900" alt="launch-webtop-via-ports" src="./docs/launch-webtop-via-ports.png">
    
    __Demo on pre-installed WebApps__
    
-   <img width="703" alt="End Results" src="./docs/working-vm.gif">
+   <img width="900" alt="End Results" src="./docs/working-vm.gif">
 
 5. Use VSCode on Web (Code-Server) to interact wit your agents:
 
@@ -78,7 +78,7 @@ Perfect for:
    - Claude Code + Hermes (both using Terminal-Cli or VSCode Extension) shared the persistent memory via [mnemon](https://github.com/mnemon-dev/mnemon)  so that Hermes remembers what you did in Claude and vice-versa.
    - Use WebTop interface in port 3000 when you need to do computer-use 
 
-   <img width="703" alt="End Results" src="./docs/working-hermes.gif">
+   <img width="900" alt="End Results" src="./docs/working-hermes.gif">
 
 6. Configure your Hermes with your favourite messaging app !
 
