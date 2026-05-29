@@ -66,17 +66,27 @@ Perfect for:
 4. Wait ~60 seconds after first launch. It takes about 5-7 minutes if docker image is not loaded yet. When the web desktop URL appears in the Codespace Ports tab, click it.
 
    <img width="703" alt="launch-webtop-via-ports" src="./docs/launch-webtop-via-ports.png">
+   
+   __Demo on pre-installed WebApps__
+   
    <img width="703" alt="End Results" src="./docs/working-vm.gif">
 
-5. Inside the WebTop desktop:
+5. Use VSCode on Web (Code-Server) to interact wit your agents:
 
-   - You see `hermes dashboard` is already running
-   - Run `hermes` from the terminal; OR:
-   - Go to chromium at `http://localhost:9119` to access Hermes WebUI
-   - However, my recommendation to use CodeServer interface instead of Webtop to interact with the agent 
+   - Interact with files system using VSCode on the browser
+   - Interact with Hermes Agent using VSCode Extension OR via hermes-cli in the VSCode Terminal
+   - Claude Code + Hermes (both using Terminal-Cli or VSCode Extension) shared the persistent memory via [mnemon](https://github.com/mnemon-dev/mnemon)  so that Hermes remembers what you did in Claude and vice-versa.
+   - Use WebTop interface in port 3000 when you need to do computer-use 
 
    <img width="703" alt="End Results" src="./docs/working-hermes.gif">
 
+6. Configure your Hermes with your favourite messaging app !
+
+   - Recommendation: Watch Youtube ;-)
+
+7. Last NOTE:
+   - For localhost install.. just use http://localhost:[3000,8888,9119,7352,20128]
+     
 ## 🔧 Features
 
 - **Zero local install** — everything runs in browser via GitHub Codespaces
