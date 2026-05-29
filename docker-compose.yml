@@ -29,7 +29,7 @@ services:
 
     ports:
       # Access the Webtop GUI on port 3000 (http) ~ this is turn off becos you can access via ports 3000 from code-server
-      # - 3000:3000
+      - 3000:3000
       # hermes dashboard specific ports (adjust as needed)
       - 9119:9119
       # modelrelay specific ports (adjust as needed)
