@@ -25,11 +25,11 @@ _Run Hermes-Agent inside a browser-based VSCode + Linux desktop with free LLM su
 
 **Hermes-WebTop** gives you a **fully functional Hermes AI assistant** in your browser in under 10 minutes — no powerful PC, no Docker on your machine, no GPU required.
 
-Just open this repo in a GitHub Codespace and you get:
+Just open this repo in a GitHub Codespace, start the container and you will get:
 - A complete Ubuntu MATE desktop (WebTop) for computer use
-- CodeServer at port 8888 with Hermes Extension installed and preconfigured
+- CodeServer at port 8888 with Hermes + Claude Code (cli + vscode extension) installed and preconfigured
 - Ollama server pre-installed and auto-started
-- ModelRelay pre-installed, auto-started and pre-configured as default model
+- ModelRelay pre-installed, auto-started and pre-configured as default model for Hermes and Claude Code
 - Hermes gateway accessible via desktop launcher
 - [Mnemon](https://github.com/mnemon-dev/mnemon) as your Hermes default [memory provider](https://github.com/gitricko/hermes-plugin-mnemon)
 - Persistent volume for your config and settings
