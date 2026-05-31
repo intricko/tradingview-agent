@@ -4,7 +4,8 @@ VOLUME_NAME=hermes-webtop-config
 BACKUP_FILE=hermes_config_backup.tar.gz
 BACKUP_DIR=./backup
 
-.PHONY: backup restore clean
+.PHONY: backup restore clean docker-image-clean docker-vol-clean docker-clean docker-build
+
 
 colima-start:
 	colima start --profile hermes-webtop --cpu 6 --memory 8 --disk 100
@@ -38,8 +39,10 @@ dev:
 	$(MAKE) start-locally-baked
 
 docker-image-clean:
-	# docker rm -f $$(docker ps -qa)
-	docker rm -f $(DOCKER_NAME)
+	$(MAKE) stop
+	-docker rm -f $(DOCKER_NAME)
+	-docker rmi $(DOCKER_IMAGE_NAME) ghcr.io/gitricko/$(DOCKER_IMAGE_NAME)
+
 
 docker-vol-clean:
 	docker volume rm -f $(VOLUME_NAME)
