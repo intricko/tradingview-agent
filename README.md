@@ -114,7 +114,7 @@ This image includes `code-server` and exposes it on port `8888`.
 > Note: this setup may use `code-server --auth none` in development, so keep port `8888` private. For local production use, secure it with an authenticated reverse proxy or firewall.
 
 - Hermes Agent's Extension is preinstalled and configured in VSCode
-- Cline Extension is also preinstall and configured to ModelRelay
+- Claude Code Extension is also preinstall and configured to ModelRelay
 - Start Hacking away in VSCode, use WebTop if you need to monitor agent do desktop-use operations. eg: Non-Headless Chrome debugging for instance / Linux Computer-Use
 
 ## 🔒 Security: Protected by GitHub Authentication
