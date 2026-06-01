@@ -1,9 +1,9 @@
-# 🪽 Hermes — Web Top
-_Run Hermes-Agent inside a browser-based VSCode + Linux desktop with free LLM support through ModelRelay._
+# 🚀 TradingView Agent — Web Top
+_Run TradingView Agent inside a browser-based Linux desktop with free LLM support through ModelRelay._
 
 <p align="center">
     <picture>
-        <img height="300" alt="hermes-webtop-title-logo" src="./docs/hermes-webtop-big.png" />
+        <img height="300" alt="tradingview-agent-title-logo" src="./docs/hermes-webtop-big.png" />
     </picture>
 </p>
 
@@ -12,24 +12,25 @@ _Run Hermes-Agent inside a browser-based VSCode + Linux desktop with free LLM su
 </p>
 
 <p align="center">
-<a href="https://github.com/gitricko/hermes-webtop/actions/workflows/docker-publish.yml">
-    <img src="https://github.com/gitricko/hermes-webtop/actions/workflows/docker-publish.yml/badge.svg" alt="Last Docker Image Push">
+<a href="https://github.com/intricko/tradingview-agent/actions/workflows/docker-publish.yml">
+    <img src="https://github.com/intricko/tradingview-agent/actions/workflows/docker-publish.yml/badge.svg" alt="Last Docker Image Push">
   </a>
   <a href="LICENSE">
-    <img src="https://img.shields.io/github/license/gitricko/hermes-webtop" alt="License">
+    <img src="https://img.shields.io/github/license/intricko/tradingview-agent" alt="License">
   </a>
-  <a href="https://github.com/gitricko/hermes-webtop/issues">
-    <img src="https://img.shields.io/github/issues/gitricko/hermes-webtop" alt="GitHub issues">
+  <a href="https://github.com/intricko/tradingview-agent/issues">
+    <img src="https://img.shields.io/github/issues/intricko/tradingview-agent" alt="GitHub issues">
   </a>
 </p>
 
-**Hermes-WebTop** gives you a **fully functional Hermes AI assistant** in your browser in under 10 minutes — no powerful PC, no Docker on your machine, no GPU required.
+**TradingView-Agent** gives you a **fully functional TradingView AI assistant** in your browser in under 10 minutes — no powerful PC, no Docker on your machine, no GPU required.
 
 Just open this repo in a GitHub Codespace, start the container and you will get:
 - A complete Ubuntu MATE desktop (WebTop) for computer use
 - CodeServer at port 8888 with Hermes + Claude Code (cli + vscode extension) installed and preconfigured
 - Ollama server pre-installed and auto-started
 - ModelRelay pre-installed, auto-started and pre-configured as default model for Hermes and Claude Code
+- **TradingView Linux Desktop** — ready to launch from the desktop or autostart
 - Hermes gateway accessible via desktop launcher
 - [Mnemon](https://github.com/mnemon-dev/mnemon) as your Hermes default [memory provider](https://github.com/gitricko/hermes-plugin-mnemon)
 - Persistent volume for your config and settings
@@ -41,13 +42,13 @@ When you're ready to go production, simply move the same Docker setup to your ow
 Hermes is an AI agent framework that connects LLMs directly to your communication platforms (WhatsApp, Telegram, Slack, Discord, etc.) and can run cron jobs, spawn sub-agents, speak/listen, and give you a beautiful dashboard.
 
 The only catch? You normally need a dedicated machine with GPU.
-**Hermes-WebTop removes that catch completely.**
+**TradingView-Agent removes that catch completely.**
 
 Perfect for:
-- Trying Hermes-Agent risk-free
+- Trying TradingView Agent risk-free
 - Free LLM APIs through [ModelRelay](https://github.com/ellipticmarketing/modelrelay) or [OmniRoute](https://github.com/diegosouzapw/OmniRoute)
-- Students / hackers / evaluators
-- Anyone who wants a personal AI assistant without breaking the bank
+- Students / traders / evaluators
+- Anyone who wants a personal AI TradingView assistant without breaking the bank
 
 ## 🚀 Quick Start (5-10 minutes)
 
@@ -184,7 +185,7 @@ make start-locally-baked     # start from your local baked image
 This is a community project — every star, issue, or PR helps enormously!
 Feel free to open issues for bugs or feature requests.
 
-[![Star History Chart](https://api.star-history.com/svg?repos=gitricko/hermes-webtop&type=date&legend=top-left)](https://star-history.com/#gitricko/hermes-webtop&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=intricko/tradingview-agent&type=date&legend=top-left)](https://star-history.com/#intricko/tradingview-agent&type=date&legend=top-left)
 
 ## 📄 License
 

@@ -1,23 +1,23 @@
-DOCKER_NAME=hermes-webtop
-DOCKER_IMAGE_NAME=hermes-webtop
-VOLUME_NAME=hermes-webtop-config
-BACKUP_FILE=hermes_config_backup.tar.gz
+DOCKER_NAME=tradingview-agent
+DOCKER_IMAGE_NAME=tradingview-agent
+VOLUME_NAME=tradingview-agent-config
+BACKUP_FILE=tradingview-agent_config_backup.tar.gz
 BACKUP_DIR=./backup
 
 .PHONY: backup restore clean docker-image-clean docker-vol-clean docker-clean docker-build
 
 
 colima-start:
-	colima start --profile hermes-webtop --cpu 6 --memory 8 --disk 100
+	colima start --profile tradingview-agent --cpu 4 --memory 4 --disk 100
 
 colima-stop:
-	colima stop --profile hermes-webtop
+	colima stop --profile tradingview-agent
 
 colima-delete:
-	colima delete -f --data --profile hermes-webtop
+	colima delete -f --data --profile tradingview-agent
 
 start-locally-baked:
-	DOCKER_URI=hermes-webtop:latest \
+	DOCKER_URI=tradingview-agent:latest \
 	PUID=$(shell id -u) \
 	PGID=$(shell id -g) \
 	docker compose up -d

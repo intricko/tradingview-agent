@@ -40,11 +40,11 @@ jobs:
 
       - name: Build Docker image
         run: |
-          DOCKER_URI=hermes-webtop docker build -f ./docker/Dockerfile -t hermes-webtop:test ./docker
+          docker build -f ./docker/Dockerfile -t tradingview-agent:test ./docker
           
       - name: Test Docker image
         run: |
-          docker run --rm hermes-webtop:test > /tmp/test.log &
+          docker run --rm tradingview-agent:test > /tmp/test.log &
           sleep 60
           
           # if grep -q "Data WebSocket Server listening on port 8082" /tmp/test.log; then

@@ -1,10 +1,10 @@
 
-name: hermes-webtop
+name: tradingview-agent
 services:
-  hermes-webtop:
+  tradingview-agent:
     # Uses the specific Ubuntu-based MATE tag from LinuxServer.io
-    image: ${DOCKER_URI:-ghcr.io/gitricko/hermes-webtop:latest}
-    container_name: hermes-webtop
+    image: ${DOCKER_URI:-ghcr.io/intricko/tradingview-agent:latest}
+    container_name: tradingview-agent
     
     # Optional: Needed for some modern GUI apps to function properly on older hosts/kernels
     # security_opt:
@@ -22,7 +22,7 @@ services:
     
     volumes:
       # Change /path/to/data to the directory on your host for persistent config/files
-      - hermes-webtop-config:/config
+      - tradingview-agent-config:/config
       - .:/codespace
       # Uncomment the next line if you want to run Docker inside Webtop
       - /var/run/docker.sock:/var/run/docker.sock
@@ -45,13 +45,13 @@ services:
     restart: unless-stopped
 
     networks:
-      - hermes-webtop-net
+      - tradingview-agent-net
 
 networks:
-  hermes-webtop-net:
+  tradingview-agent-net:
     driver: bridge
 
 volumes:
-  hermes-webtop-config:
+  tradingview-agent-config:
     external: false
-    name: hermes-webtop-config
+    name: tradingview-agent-config

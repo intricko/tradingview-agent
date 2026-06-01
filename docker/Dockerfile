@@ -95,4 +95,20 @@ RUN set -eux; \
     chmod +x /usr/local/bin/mnemon && \
     rm -rf /tmp/mnemon.tar.gz /tmp/mnemon
 
+# ---------------------------------------------------------------------------
+# Install TradingView Linux Desktop
+# ---------------------------------------------------------------------------
+# Using TradingView's official repository per:
+# https://www.tradingview.com/support/solutions/43000728898-how-to-install-and-update-desktop-app-on-linux/
+RUN if [ "${TARGETARCH:-amd64}" != "arm64" ]; then \
+    echo "Installing TradingView Linux Desktop..." && \
+    wget -O - https://tvd-packages.tradingview.com/keyring.gpg | tee /usr/share/keyrings/tradingview-desktop-archive-keyring.gpg >/dev/null && \
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/tradingview-desktop-archive-keyring.gpg] https://tvd-packages.tradingview.com/ubuntu/stable jammy multiverse" | tee /etc/apt/sources.list.d/tradingview-desktop.list >/dev/null && \
+    apt-get update && apt-get install -y tradingview && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    chown -R abc:abc /opt/TradingView && \
+    echo "[TradingView] Installed successfully"; \
+fi
+
 EXPOSE 8888 3000
