@@ -3,7 +3,7 @@ name: tradingview-agent
 services:
   tradingview-agent:
     # Uses the specific Ubuntu-based MATE tag from LinuxServer.io
-    image: ${DOCKER_URI:-ghcr.io/intricko/tradingview-agent:latest}
+    image: ${DOCKER_URI:-ghcr.io/gitricko/tradingview-agent:latest}
     container_name: tradingview-agent
     
     # Optional: Needed for some modern GUI apps to function properly on older hosts/kernels
